@@ -7,6 +7,7 @@ import LoginSignUpPages from "./components/Routes/LoginSignUpPages";
 import NavBar from "./components/Navbar";
 import PrivateComponent from "./components/PrivateComp/PrivateComponent";
 import Dashboard from "./components/Dashboard/Dashboard";
+import AddProductPage from "./components/Product/AddProductPage";
 
 function App() {
   const location = useLocation();
@@ -23,6 +24,8 @@ function App() {
             <Route element={<PrivateComponent />}>
               <Route path="/home" element={<Home />} />
               <Route path="/products" element={<Products />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/Addproductpage" element={<AddProductPage />} />
               <Route path="/dashboard" element={<Dashboard />} />
             </Route>
           </Routes>
