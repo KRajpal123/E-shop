@@ -1,13 +1,12 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+
 
 
 const userAPi = "http://localhost:8080/register";
 
 const Signup = (props) => {
-  const navigate = useNavigate()
-  const { toggleSignUpLogin,handleLogin } = props;
+  const { toggleSignUpLogin} = props;
   const [formData, setFormData] = useState({
     name: '',
     email: '',

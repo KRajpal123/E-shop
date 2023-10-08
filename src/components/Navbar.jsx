@@ -21,7 +21,9 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const {handleLogout} = useAuth();
+  const { handleLogout, } = useAuth();
+
+  const userName = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).email : "";
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -38,7 +40,7 @@ function NavBar() {
     setAnchorElUser(null);
   };
 
-  
+
 
   return (
     <AppBar position="static">
@@ -125,7 +127,7 @@ function NavBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            E-shop
           </Typography>
 
           {/*============ larger screen ========== */}
@@ -141,7 +143,13 @@ function NavBar() {
               </Button>
             ))}
           </Box>
-
+          <Typography
+          variant='body1'
+          >
+            {
+              userName
+            }
+          </Typography>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
