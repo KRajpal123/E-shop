@@ -8,7 +8,7 @@ export function AuthProvider({ children }) {
   const [isAuth, setIsAuth] = useState(false);
 
   const handleLogout = () => {
-    localStorage.removeItem("user");
+    localStorage.clear();
     setIsAuth(false);
   };
 

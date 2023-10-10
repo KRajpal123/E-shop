@@ -29,12 +29,14 @@ function Login(props) {
       .then((res) => {
         console.log(res)
         if (res.status === 200
-          && res.data
-          && res.data.email
-          && res.data.name
+          && res.data.auth
+          && res.data.user
+          && res.data.user.email
+          && res.data.user.name
         ) {
-          localStorage.setItem('user', JSON.stringify(formData));
-          navigate('/home')
+          localStorage.setItem('user', JSON.stringify(res.data.user));
+          localStorage.setItem('token',JSON.stringify(res.data.auth));
+          navigate('/products')
         }
         else {
           alert("enter correct details ")
