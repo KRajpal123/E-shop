@@ -15,7 +15,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
 import { useAuth } from './Auth/Auth';
 
-const pages = ["Home", 'Products', 'Blog', 'Contact'];
+const pages = ['Products', 'Add-Product', 'Update-Product', 'Contact'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function NavBar() {
@@ -144,7 +144,7 @@ function NavBar() {
             ))}
           </Box>
           <Typography
-          variant='body1'
+            variant='body1'
           >
             {
               userName
